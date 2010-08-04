@@ -1,0 +1,234 @@
+/*
+
+Theme Name: Boilerplate HTML5 theme
+Theme URI: http://joeloliveira.com/wordpress
+Description: This Boilerplate HTML5 is a kick-start for theme developers.
+Version: 0.1
+Author: Joel Oliveira
+Author URI: http://joeloliveira.com
+Tags: white, blank, 2 column, fixed
+
+*/
+
+/* =================================================== */
+/* = reset.css courtesy of Eric Meyer - meyerweb.com = */
+/* =================================================== */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+}
+/* Some general stuff */
+body 			{ line-height: 1; }
+blockquote, q 	{ quotes: none; }
+ol, ul 			{ list-style: none; }
+ins 			{ text-decoration: none; }
+del 			{ text-decoration: line-through; }
+table 			{ border-collapse: collapse; border-spacing: 0; }
+:focus 			{ outline: 0; }
+/* New HTML5 elements. */
+article, 
+aside, 
+details, 
+figcaption, 
+figure, 
+footer, 
+header,
+hgroup, 
+menu, 
+nav, 
+section { display: block; }
+
+/* ==================== */
+/* = BASIC FORMATTING = */
+/* ==================== */
+body { 
+	font-family:Verdana,Tahoma,Helvetica,Arial,sans-serif; 
+	font-size:62.5%; 
+	line-height:2.2em; 
+	background:#fff; 
+	text-align:center; 
+}
+
+h1 { font-size: 2em; }
+h2 { font-size: 1.4em; margin-top:10px; }
+h3 { font-size: 1.2em; margin-top:10px; }
+h4 { font-size: 1em; }
+h2, h3, h4 { font-family:Helvetica, Verdana, Tahoma, Arial, sans-serif; }
+
+a:link 		{ color:#666; text-decoration:none; }
+a:hover 	{ color:#333; text-decoration:none; }
+a:visited, 
+a:active 	{ color:#999; }
+a img 		{ border:none; }
+
+pre, code { margin:10px; font-family:"Courier New", Courier, monospace; }
+
+/* ========== */
+/* = LAYOUT = */
+/* ========== */
+#contentwrap { width: 950px; margin:0 auto; }
+
+header[role="banner"], #contentwrap, footer {
+	display:block;
+	margin:0 auto;
+	overflow:hidden;
+	padding:0;
+	text-align:left;
+	width:950px;
+}
+
+/* ======================= */
+/* = HEADER & NAVIGATION = */
+/* ======================= */
+header[role="banner"] { 
+	padding:10px;
+	margin:10px auto;
+	width:930px;
+	background:#efefef;
+	
+	-webkit-border-radius: 5px;
+	-khtml-border-radius: 5px;	
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+header[role="banner"] nav ul {
+	clear:both;
+	margin:10px 0 0;
+	padding:0;
+	list-style:none;
+	display:block;
+	overflow:hidden;
+}
+header[role="banner"] nav ul li {
+	display:block;
+	float:left;
+	padding:0 0;
+	margin:0 0;
+	font-size:1.3em;
+	font-weight: bold;
+}
+header[role="banner"] nav ul li a:link,
+header[role="banner"] nav ul li a:visited,
+header[role="banner"] nav ul li a:hover,
+header[role="banner"] nav ul li a:active { 
+	background:#fff;
+	color:#666;
+	display:inline-block;
+	margin-right:5px;
+	padding:2px 5px;
+	text-decoration:none;
+	
+	-webkit-border-radius: 5px;
+	-khtml-border-radius: 5px;	
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+
+/* ===================== */
+/* = MAIN CONTENT AREA = */
+/* ===================== */
+#posts { float:left; width:520px; font-size:1.2em; margin:0;}			  /* default this to 3 columns */
+body.one-column #posts { float:none; clear:both; width:950px; margin:0;}  /* 1 column */
+body.two-column #posts { width:735px; }									  /* 2 columns */
+
+#posts nav { padding:0px; font-size:.9em; overflow:hidden; }
+#posts nav .previous { float:left; }
+#posts nav .next { float:right; }
+
+article.post {}
+article.post h2 a{color:#333; text-decoration:none;}
+article.post h2 a:hover{color:#ccc;}
+article.post p{margin:1.2em 1em 1.2em 0;}
+article.post a{text-decoration:underline;}
+article.post img{padding:5px 8px;}
+article.post ul {list-style: square; padding:2px 0;}
+article.post li {padding:2px 0;}
+article.post small{font-size: .9em;}
+
+/* styling for 'continued' page links */
+p.continued { padding:5px; background:#f0f0f0; }
+p.continued a { padding:5px; font-weight:bold; }
+
+/* ============== */
+/* = SIDEBAR(s) = */
+/* ============== */
+#contentwrap aside, body > footer ul#sidebar-footer { 
+	border:solid 1px #efefef;
+	float:left;
+	min-height:500px; 
+	width:200px; 
+	
+	-webkit-border-radius: 10px;
+	-khtml-border-radius: 10px;	
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+}
+#contentwrap aside.left { margin-right:13px; }
+#contentwrap aside.right { margin-left:13px; }
+#contentwrap aside h2{margin-top:20px;}
+#contentwrap aside p {}
+#contentwrap aside a {color:#666;}
+#contentwrap aside a:hover {color:#999;}
+#contentwrap aside ul{margin:0;padding:0;list-style:none;}
+#contentwrap aside ul li {padding: 2px;}
+#contentwrap aside ul li a{display:block; border-bottom: solid 1px #ececec;}
+#contentwrap aside ul ul {}
+#contentwrap aside ul ul li {}
+
+/* ============ */
+/* = COMMENTS = */
+/* ============ */
+#comments { margin:0px 10px 10px 0; padding:0px 10px 10px 0; }
+#comments h3 { margin:0 0 10px; }
+ol.commentlist { margin:0; padding:0; overflow: hidden;}
+ol.commentlist li { background:#ececec;margin:0px 0 10px; padding:10px;}
+ol.commentlist li.alt {}
+ol.commentlist a {}
+cite {font-style: normal; font-weight: bold;}
+small.commentmetadata {}
+
+/* ================ */
+/* = COMMENT FORM = */
+/* ================ */
+#commentform { margin:0px 10px 10px 0; padding:0px 10px 10px 0; }
+#commentbox { width:100%; min-width:400px; margin:5px 5px 0 0; }
+#commentform #author, 
+#commentform #email, 
+#commentform #url, 
+#commentform textarea, 
+#commentform #submit { border:solid 1px #ccc; margin:5px 5px 0 0; }
+#submit { cursor:pointer; }
+
+/* ========== */
+/* = FOOTER = */
+/* ========== */
+body > footer { clear:both; margin-top:13px; }
+body > footer p { padding:5px 0; }
+body > footer ul#sidebar-footer { width:948px; min-height:90px; margin-bottom:13px; }
+
+/* ======================== */
+/* = CLEARFIX SHENANIGANS = */
+/* ======================== */
+.clearfix:after {
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;
+}
+.clearfix { display: inline-block; }
+* html .clearfix { height: 1%; }
