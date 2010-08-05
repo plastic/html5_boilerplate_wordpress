@@ -1,5 +1,10 @@
 <?php
 
+// ===================
+// = UTILITY METHODS =
+// ===================
+function show_sidebar_at($position) { return get_option('sidebar_'.$position) == "1" ? true : false; }
+
 // =========================
 // = CUSTOM THEME SETTINGS =
 // =========================
@@ -35,12 +40,9 @@ function editglobalcustomfields()
 	<?php
 }
 
-function show_sidebar_at($position) { return get_option('sidebar_'.$position) == "1" ? true : false; }
-
 // =======================
 // = SET UP THE SIDEBARS =
 // =======================
-
 if (function_exists('register_sidebar'))
 {
 	if(show_sidebar_at('left')){ register_sidebar(array('name'=>'sidebar left')); }
@@ -51,12 +53,8 @@ if (function_exists('register_sidebar'))
 // ===================================
 // = ADD NEW CLASSES TO body_class() =
 // ===================================
-
-add_filter('body_class','sidebar_number_class');
-
-function sidebar_number_class($classes, $class) 
+function sidebar_number_class() 
 {
-
 	$columns = 1;
 	if(show_sidebar_at('left')) { $columns++; $classes[] = "left-column"; }
 	if(show_sidebar_at('right')) { $columns++; $classes[] = "right-column";  }
@@ -68,6 +66,35 @@ function sidebar_number_class($classes, $class)
 	// return the $classes array
 	return $classes;
 }
+add_filter('body_class','sidebar_number_class');
 
+
+// ============
+// = TWEAK WP =
+// ============
+if (function_exists( 'add_theme_support' ))
+{
+	add_theme_support('post-thumbnails');
+	add_theme_support('menus');
+	add_theme_support('automatic-feed-links');
+	register_nav_menu('primary-menu', __('Primary Menu'));
+}
+
+// Load jQuery
+if (!is_admin())
+{
+   wp_deregister_script('jquery');
+   wp_register_script('jquery', ("http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js"), false);
+   wp_enqueue_script('jquery');
+}
+
+// Clean up the <head>
+function removeHeadLinks()
+{
+	remove_action('wp_head', 'rsd_link');
+	remove_action('wp_head', 'wlwmanifest_link');
+	remove_action('wp_head', 'wp_generator');
+}
+add_action('init', 'removeHeadLinks');
 
 ?>

@@ -25,17 +25,15 @@
 	  	<![endif]-->
 	</head>
 	
+	
 	<body <?php if(is_front_page()): ?>id="home"<?php endif; ?> <?php body_class(); ?>>
 
 		<header role="banner">
 			<hgroup>
-				<h1><a href="<?php echo get_settings('home'); ?>"><?php bloginfo('name'); ?></a></h1>
+				<h1><a href="<?php echo get_option('home'); ?>"><?php bloginfo('name'); ?></a></h1>
 				<h2><?php bloginfo('description'); ?></h2>
 			</hgroup>
 			<nav>
-				<ul>
-					<li><a href="<?php echo get_settings('home'); ?>">Home</a></li>
-					<?php wp_list_pages('title_li=&depth=1'); ?>
-				</ul>
+				<?php wp_nav_menu( array('menu' => 'Primary Navigation' )); ?>
 			</nav>
 		</header>
