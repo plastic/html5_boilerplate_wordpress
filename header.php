@@ -33,7 +33,13 @@
 				<h1><a href="<?php echo get_option('home'); ?>"><?php bloginfo('name'); ?></a></h1>
 				<h2><?php bloginfo('description'); ?></h2>
 			</hgroup>
-			<nav>
+
+			<nav id="primary">
 				<?php wp_nav_menu( array('menu' => 'Primary Navigation' )); ?>
+			</nav>
+
+			<nav id="utility">
+				<?php wp_nav_menu( array('menu' => 'Utility Navigation' )); ?>
+				<?php if(show_search_form()){ include (TEMPLATEPATH . "/searchform.php"); } ?>
 			</nav>
 		</header>

@@ -4,7 +4,7 @@
 // = UTILITY METHODS =
 // ===================
 function show_sidebar_at($position) { return get_option('sidebar_'.$position) == "1" ? true : false; }
-
+function show_search_form() { return get_option('show_search') == "1" ? true : false; }
 // =========================
 // = CUSTOM THEME SETTINGS =
 // =========================
@@ -30,10 +30,23 @@ function editglobalcustomfields()
 			<input type="checkbox" name="sidebar_footer" value="1" id="sidebar_footer" <?php echo $sidebar_footer_status ?> /> Footer Sidebar
     	</p>
 
+		<p>
+			<strong>Show search form in the header?</strong><br />
+			<select name="show_search" id="show_search">
+				<?php if (show_search_form()) : ?>
+					<option value="1" selected="selected">Yes</option>
+					<option value="0">No</option>
+				<?php else : ?>
+					<option value="1">Yes</option>
+					<option value="0" selected="selected">No</option>
+				<?php endif; ?>
+			</select>
+		</p>
+
     	<p><input type="submit" name="Submit" value="Update Options" /></p>
 
     	<input type="hidden" name="action" value="update" />
-    	<input type="hidden" name="page_options" value="sidebar_left,sidebar_right,sidebar_footer" />
+    	<input type="hidden" name="page_options" value="sidebar_left,sidebar_right,sidebar_footer,show_search" />
 
   	</form>
 	</div>
@@ -77,7 +90,12 @@ if (function_exists( 'add_theme_support' ))
 	add_theme_support('post-thumbnails');
 	add_theme_support('menus');
 	add_theme_support('automatic-feed-links');
-	register_nav_menu('primary-menu', __('Primary Menu'));
+	register_nav_menus(
+  		array(
+  		  'primary_navigation' => 'Primary Navigation',
+  		  'utility_navigation' => 'Utility Navigation'
+  		)
+  	);
 }
 
 // Load jQuery
