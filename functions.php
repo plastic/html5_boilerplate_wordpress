@@ -19,20 +19,22 @@ function editglobalcustomfields()
 	$sidebar_footer_status = show_sidebar_at('footer') == "1" ? "checked=\"yes\"" : "";
 	?>
 	<div class='wrap'>
-	  <h2>Theme Options</h2>
-  	<form method="post" action="options.php">
-  	  <?php wp_nonce_field('update-options') ?>
+		<h2>Theme Options</h2>
+  		<form method="post" action="options.php">
+	  	  	<input type="hidden" name="action" value="update" />
+			<input type="hidden" name="page_options" value="sidebar_left,sidebar_right,sidebar_footer,show_search" />
+			<?php wp_nonce_field('update-options') ?>
 
-    	<p>
-			<strong>Which sidebars would you like to see?</strong><br />
-			<input type="checkbox" name="sidebar_left" value="1" id="sidebar_left" <?php echo $sidebar_left_status ?> /> Left Sidebar<br />
-			<input type="checkbox" name="sidebar_right" value="1" id="sidebar_right" <?php echo $sidebar_right_status ?> /> Right Sidebar<br />
-			<input type="checkbox" name="sidebar_footer" value="1" id="sidebar_footer" <?php echo $sidebar_footer_status ?> /> Footer Sidebar
-    	</p>
+			<p>
+				<strong>Which sidebars would you like to see?</strong><br />
+				<input type="checkbox" name="sidebar_left" value="1" id="sidebar_left" <?php echo $sidebar_left_status ?> /> Left Sidebar<br />
+				<input type="checkbox" name="sidebar_right" value="1" id="sidebar_right" <?php echo $sidebar_right_status ?> /> Right Sidebar<br />
+				<input type="checkbox" name="sidebar_footer" value="1" id="sidebar_footer" <?php echo $sidebar_footer_status ?> /> Footer Sidebar
+			</p>
 
-		<p>
-			<strong>Show search form in the header?</strong><br />
-			<select name="show_search" id="show_search">
+			<p>
+				<strong>Show search form in the header?</strong><br />
+				<select name="show_search" id="show_search">
 				<?php if (show_search_form()) : ?>
 					<option value="1" selected="selected">Yes</option>
 					<option value="0">No</option>
@@ -40,15 +42,12 @@ function editglobalcustomfields()
 					<option value="1">Yes</option>
 					<option value="0" selected="selected">No</option>
 				<?php endif; ?>
-			</select>
-		</p>
+				</select>
+			</p>
 
-    	<p><input type="submit" name="Submit" value="Update Options" /></p>
+			<p><input type="submit" name="Submit" value="Update Options" /></p>
 
-    	<input type="hidden" name="action" value="update" />
-    	<input type="hidden" name="page_options" value="sidebar_left,sidebar_right,sidebar_footer,show_search" />
-
-  	</form>
+	  	</form>
 	</div>
 	<?php
 }
@@ -80,7 +79,6 @@ function sidebar_number_class()
 	return $classes;
 }
 add_filter('body_class','sidebar_number_class');
-
 
 // ============
 // = TWEAK WP =
