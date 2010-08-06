@@ -7,10 +7,10 @@
 			// Returns the title based on the type of page being viewed -- jeebus this is a mess.
 			if (is_single()){ single_post_title(); echo ' | ';  bloginfo( 'name' );
 			} elseif (is_home() || is_front_page()){ bloginfo( 'name' ); if(get_bloginfo( 'description' )){ echo ' | ' ; bloginfo( 'description' ); }
-			} elseif ( is_page()   ){ single_post_title( '' ); echo ' | '; bloginfo( 'name' );
-			} elseif ( is_search() ){ printf( __( 'Search results for "%s"', 'twentyten' ), get_search_query() ); twentyten_the_page_number(); echo ' | '; bloginfo( 'name' );
-			} elseif ( is_404()    ){ _e( 'Not Found', 'twentyten' ); echo ' | '; bloginfo( 'name' );
-			} else { wp_title( '' ); echo ' | '; bloginfo( 'name' ); twentyten_the_page_number(); }
+			} elseif ( is_page() ){ single_post_title( '' ); echo ' | '; bloginfo( 'name' );
+			} elseif ( is_search() ){ printf( __( 'Search results for "%s"', '' ), get_search_query() ); echo ' | '; bloginfo( 'name' );
+			} elseif ( is_404() ){ _e( 'Not Found', '' ); echo ' | '; bloginfo( 'name' );
+			} else { wp_title(''); echo ' | '; bloginfo( 'name' ); }
 		?></title>
 		<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" />
 		<link rel="alternate"  href="<?php bloginfo('rss2_url'); ?>"    type="application/rss+xml"  title="RSS 2.0" />
