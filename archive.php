@@ -1,8 +1,10 @@
 <?php get_header(); ?>
 <div id="contentwrap">
-	<div id="content">
+  
+	<?php if(show_sidebar_at('left')) { get_sidebar('left'); } ?>
+	<section id="posts" class="archives">
+
 		<?php if (have_posts()) : ?>
-		  
 			<?php $post = $posts[0]; // Hack. Set $post so that the_date() works. ?>
 			
 			<?php /* If this is a category archive */ if (is_category()) { ?>				
@@ -28,21 +30,23 @@
     			<?php the_excerpt() ?>
     			<p class="postmetadata"><small><?php the_time('F jS, Y') ?> | <?php the_category(', ') ?> | <?php edit_post_link('Edit','','|'); ?>  <?php comments_popup_link('No Comments &#187;', '1 Comment &#187;', '% Comments &#187;'); ?></small></p> 
     		</div>
+        <!-- POSTS // END -->
   		<?php endwhile; ?>
-      <!-- POSTS // END -->
+			<nav>
+				<div class="previous"><?php next_posts_link('&laquo; Previous Entries') ?></div>
+				<div class="next"><?php previous_posts_link('Next Entries &raquo;') ?></div>
+			</nav>
+      <!-- POSTS // end -->
+		<?php else : ?>
+			<!-- NO POSTS  // woops -->
+			<article>
+				<h2>No Post(s) Found</h2>
+				<p>Sorry, but you are looking for something that isn't here.</p>
+			</article>
+		<?php endif; ?>
 
-  		<div class="navigation">
-  			<div class="alignleft"><?php next_posts_link('&laquo; Previous Entries') ?></div>
-  			<div class="alignright"><?php previous_posts_link('Next Entries &raquo;') ?></div>
-  		</div>
-	
-  	<?php else : ?>
-  		<h2>Not Found</h2>
-  		<?php include (TEMPLATEPATH . '/searchform.php'); ?>
-  	<?php endif; ?>
+	</section>
+	<?php if(show_sidebar_at('right')) { get_sidebar ('right'); } ?>
 
-	</div>
-	<?php get_sidebar(); ?>
-  <?php get_sidebar ('right'); ?>
 </div>
 <?php get_footer(); ?>

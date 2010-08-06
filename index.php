@@ -4,6 +4,7 @@
 	<?php if(show_sidebar_at('left')) { get_sidebar('left'); } ?>
 	<section id="posts">
 		<?php if (have_posts()) : ?>
+			<?php $post = $posts[0]; // Hack. Set $post so that the_date() works. ?>
 			<!-- POSTS // begin -->
 			<?php while (have_posts()) : the_post(); ?>
 				<!-- POST // begin -->
