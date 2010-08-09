@@ -1,59 +1,65 @@
 <?php get_header(); ?>
 <div id="contentwrap">
 	
-	<div id="content">			
+	<?php if(show_sidebar_at('left')) { get_sidebar('left'); } ?>
+	<section id="posts" class="single-post">
     
-  	<?php if (have_posts()) : ?>
+  	<?php if (have_posts()) : the_post(); ?>
+				<!-- POST // begin -->
+				<article id="post-<?php the_ID(); ?>" class="post">
+					<h2><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title(); ?>"><?php the_title(); ?></a></h2>
+					<cite>
+						<span class="date">Posted: <abbr title="<?php the_time('Y-d-m\TG:i:s') ?>" class="published"><?php the_time('jS F Y') ?></abbr></span>
+						<span class="author">By <?php the_author() ?></span>
+					</cite>
+					
+					<?php the_content('Continue reading &raquo;'); ?>
 
-  	  <?php while (have_posts()) : the_post(); ?>
-		    <div class="post" id="post-<?php the_ID(); ?>">
-			    <h2><a href="<?php echo get_permalink() ?>" rel="bookmark" title="Permanent Link: <?php the_title(); ?>"><?php the_title(); ?></a></h2>
-			    <small><?php the_time('m/j/y') ?> | <?php the_time() ?></small>
-				  <?php the_content('<p>Continue reading &raquo;</p>'); ?>
-				  <div class="navigation">
-					  <div class="alignleft"><?php previous_post_link('&laquo; %link') ?></div>
-					  <div class="alignright"><?php next_post_link('%link &raquo;') ?></div>
-				  </div>
-  				<p class="postmetadata alt">
-    				<small>Category: <?php the_category(', ') ?> | <?php the_tags( 'Tags: ', ', ', ''); ?><br />
-    				<?php comments_rss_link('Get the feed'); ?> |  
+          <nav>
+            <div class="previous"><?php previous_post_link('&laquo; %link'); ?></div>
+            <div class="next"><?php next_post_link('%link &raquo;') ?></div>
+          </nav>
+
+					<footer class="post-info">
+    				<small>Category: <?php the_category(', ') ?> | <?php the_tags( 'Tags: ', ', ', ''); ?>
+    				<?php post_comments_feed_link('RSS (for these comments)'); ?> |  
 						
     				<?php if (('open' == $post-> comment_status) && ('open' == $post->ping_status)) { ?>
       				<!-- Both Comments and Pings are open -->
-      				<a href="#respond">Comment</a> | <a href="<?php trackback_url(true); ?>" rel="trackback">Trackback</a>
+      				<a href="#respond">Leave a comment</a> | <a href="<?php trackback_url(true); ?>" rel="trackback">Trackback</a>
 						
     				<?php } elseif (!('open' == $post-> comment_status) && ('open' == $post->ping_status)) { ?>
     				  <!-- Only Pings are Open -->
-    				  Comments are closed. Feel free to <a href="<?php trackback_url(true); ?> " rel="trackback">Trackback</a> intsead!
+    				  Comments are closed. Feel free to <a href="<?php trackback_url(true); ?> " rel="trackback">Trackback</a> instead!
 						
     				<?php } elseif (('open' == $post-> comment_status) && !('open' == $post->ping_status)) { ?>
     				  <!-- Comments are open, Pings are not -->
-    				  Pinging is currently disabled.
+    				  Trackbacks are currently disabled.
 			
     				<?php } elseif (!('open' == $post-> comment_status) && !('open' == $post->ping_status)) { ?>
     				  <!-- Neither Comments, nor Pings are open -->
-    				  Comments and pings are currently closed.			
+              Comments and Trackbacks are currently closed.			
 						
     				<?php } edit_post_link('Moderate','| ',''); ?></small>
 				  
     				<?php wp_link_pages(array('before' => '<p><strong>Pages:</strong> ', 'after' => '</p>', 'next_or_number' => 'number')); ?>
-  				</p>
-  		  </div>
-  	    <div id="comments">
+  				</footer>
+
+  		  </article>
+
+  	    <section id="comments">
     		  <?php comments_template(); ?>
-    	  </div>
-  	  <?php endwhile; ?>
-	 
-	  <?php else: ?>
+    	  </section>
 	
-	    <p>Sorry, no posts matched your criteria.</p>
-	
-	  <?php endif; ?>
-	
-	</div>
-	
-  <?php get_sidebar(); ?>
-  <?php get_sidebar ('right'); ?>
+		<?php else : ?>
+			<!-- NO POSTS  // woops -->
+			<article>
+				<h2>No Post(s) Found</h2>
+				<p>Sorry, but you are looking for something that isn't here.</p>
+			</article>
+		<?php endif; ?>
+	</section>
+	<?php if(show_sidebar_at('right')) { get_sidebar ('right'); } ?>
 
 </div>
 <?php get_footer(); ?>
