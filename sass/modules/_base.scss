@@ -1,0 +1,12 @@
+// This should be applied to the body of the document:
+// <pre class="source-code sass">
+// body
+//   +base-font-properties
+// </pre>
+  
+@mixin base-font-properties {
+  color: $font-color;
+  font-family: $base-font-family;
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+}

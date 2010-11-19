@@ -1,0 +1,14 @@
+body {
+ @include base-font-properties;
+}
+
+body, select, input, textarea { color: $font-color; }
+a:hover, a:active { outline: none; }
+a,
+a:active,
+a:visited { color: $loud-color; }
+a:hover { color: $loud-color; border-bottom: dotted 1px $quiet-color; }
+a:link { -webkit-tap-highlight-color: #FF5E99; }
+a img  { border:none; }
+
+pre, code, kbd, samp { font-family: $fixed-font-family; }
