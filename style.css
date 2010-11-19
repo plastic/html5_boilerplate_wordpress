@@ -227,32 +227,18 @@ input:invalid, textarea:invalid {
   background-color: #f0dddd;
 }
 
-/* line 65, sass/partials/_boilerplate.scss */
-::-moz-selection {
-  background: #FF5E99;
-  color: #fff;
-  text-shadow: none;
-}
-
-/* line 66, sass/partials/_boilerplate.scss */
-::selection {
-  background: #FF5E99;
-  color: #fff;
-  text-shadow: none;
-}
-
-/* line 68, sass/partials/_boilerplate.scss */
+/* line 67, sass/partials/_boilerplate.scss */
 button {
   width: auto;
   overflow: visible;
 }
 
-/* line 69, sass/partials/_boilerplate.scss */
+/* line 68, sass/partials/_boilerplate.scss */
 .ie7 img {
   -ms-interpolation-mode: bicubic;
 }
 
-/* line 71, sass/partials/_boilerplate.scss */
+/* line 70, sass/partials/_boilerplate.scss */
 .ir {
   display: block;
   text-indent: -999em;
@@ -262,25 +248,25 @@ button {
   direction: ltr;
 }
 
-/* line 72, sass/partials/_boilerplate.scss */
+/* line 71, sass/partials/_boilerplate.scss */
 .hidden {
   display: none;
   visibility: hidden;
 }
 
-/* line 73, sass/partials/_boilerplate.scss */
+/* line 72, sass/partials/_boilerplate.scss */
 .visuallyhidden {
   position: absolute !important;
   clip: rect(1px 1px 1px 1px);
   clip: rect(1px, 1px, 1px, 1px);
 }
 
-/* line 74, sass/partials/_boilerplate.scss */
+/* line 73, sass/partials/_boilerplate.scss */
 .invisible {
   visibility: hidden;
 }
 
-/* line 75, sass/partials/_boilerplate.scss */
+/* line 74, sass/partials/_boilerplate.scss */
 .clearfix:before, .clearfix:after {
   content: "\0020";
   display: block;
@@ -288,12 +274,12 @@ button {
   visibility: hidden;
 }
 
-/* line 76, sass/partials/_boilerplate.scss */
+/* line 75, sass/partials/_boilerplate.scss */
 .clearfix:after {
   clear: both;
 }
 
-/* line 77, sass/partials/_boilerplate.scss */
+/* line 76, sass/partials/_boilerplate.scss */
 .clearfix {
   zoom: 1;
 }
@@ -306,42 +292,56 @@ body {
   line-height: 2.2em;
 }
 
-/* line 5, sass/partials/_base.scss */
+/* line 2, sass/partials/_base.scss */
 body, select, input, textarea {
   color: #444444;
 }
 
-/* line 6, sass/partials/_base.scss */
+/* line 3, sass/partials/_base.scss */
 a:hover, a:active {
   outline: none;
 }
 
-/* line 9, sass/partials/_base.scss */
+/* line 6, sass/partials/_base.scss */
 a,
 a:active,
 a:visited {
   color: #111111;
 }
 
-/* line 10, sass/partials/_base.scss */
+/* line 7, sass/partials/_base.scss */
 a:hover {
   color: #111111;
   border-bottom: dotted 1px #aaaaaa;
 }
 
-/* line 11, sass/partials/_base.scss */
+/* line 8, sass/partials/_base.scss */
 a:link {
   -webkit-tap-highlight-color: #FF5E99;
 }
 
-/* line 12, sass/partials/_base.scss */
+/* line 9, sass/partials/_base.scss */
 a img {
   border: none;
 }
 
-/* line 14, sass/partials/_base.scss */
+/* line 11, sass/partials/_base.scss */
 pre, code, kbd, samp {
   font-family: Monaco, "Andale Mono", "Lucida Console", monospace;
+}
+
+/* line 14, sass/partials/_base.scss */
+::-moz-selection {
+  background: #aaaaaa;
+  color: #111111;
+  text-shadow: none;
+}
+
+/* line 19, sass/partials/_base.scss */
+::selection {
+  background: #aaaaaa;
+  color: #111111;
+  text-shadow: none;
 }
 
 /* ========== */
