@@ -5,6 +5,7 @@
 // ===================
 function show_sidebar_at($position) { return get_option('sidebar_'.$position) == "1" ? true : false; }
 function show_search_form() { return get_option('show_search') == "1" ? true : false; }
+
 // =========================
 // = CUSTOM THEME SETTINGS =
 // =========================
@@ -96,12 +97,17 @@ if (function_exists( 'add_theme_support' ))
   	);
 }
 
-// Load jQuery
+// Load jQuery & Modernizr
 if (!is_admin())
 {
-   wp_deregister_script('jquery');
-   wp_register_script('jquery', ("http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js"), false);
-   wp_enqueue_script('jquery');
+	wp_deregister_script('jquery');
+	wp_register_script('jquery', ("http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"), false);
+	wp_enqueue_script('jquery');
+
+	wp_deregister_script( 'modernizr' ); // get rid of any native Modernizr
+	wp_register_script( 'modernizr', get_bloginfo('template_directory') . '/js/libs/modernizr-1.6.min.js', array(), '1.6' );
+	wp_enqueue_script( 'modernizr' );
+   
 }
 
 // Clean up the <head>
