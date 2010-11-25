@@ -8,6 +8,9 @@ Author: Joel Oliveira
 Author URI: http://joeloliveira.com
 Tags: white, blank, 2 column, fixed
 
+Credit where credit is due 
+- much thanks to Paul Irish, Divya Manian and everyone who's contributed to the html5boilerplate effort => http://html5boilerplate.com/
+
 */
 
 // Base Font
@@ -28,9 +31,32 @@ $quiet-color:       $font-color + #666 !default;
 $header-color:      $font-color - #222 !default;
 $background-color:  white !default;
 
-@import "modules/base";
+//**
+//  Susy: Un-obtrusive grids for designers
+//  By: Eric A. Meyer and OddBird
+//  Site: susy.oddbird.net
+//**
 
+// Font Sizes --------------------------------------------------------------
+
+$base-font-size:   16px;
+$base-line-height: 24px;
+
+// Grid --------------------------------------------------------------
+
+$total-cols: 	12;
+$col-width: 	4em;
+$gutter-width: 	1em;
+$side-gutter-width: $gutter-width;
+
+// Don't move this @import above the GRID and FONT-SIZE variables.
+@import "susy/susy";
+@include susy;
+
+// @import "compass";
+@import "modules/base";
 @import "partials/boilerplate";
 @import "partials/base";
+@import "partials/layout";
 @import "partials/legacy";
 @import "partials/at_media";

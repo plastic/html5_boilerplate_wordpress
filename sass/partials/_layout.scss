@@ -1,0 +1,35 @@
+#container { 
+	@include container;
+	// @include show-grid('grid.png');
+}
+
+// **********************************************************
+#container > header, 
+#container > footer, 
+body.one-column #posts {
+	@include full;
+}
+
+// **********************************************************
+body.three-column {
+	#posts { @include columns(6); }
+	aside.left, aside.right { @include columns(3); }
+	aside.left { @include alpha; }
+	aside.right { @include omega; }
+}	/* default this to 3 columns */
+
+// **********************************************************
+body.two-column {
+	#posts { @include columns(9); }
+	aside.right, aside.left { @include columns(3); }
+	&.left-column {
+		aside.left { @include alpha; }
+		#posts { @include omega; }
+	}
+	&.right-column {
+		#posts { @include alpha; }
+		aside.right { @include omega; }
+	}
+}	/* 2 columns */
+
+

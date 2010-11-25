@@ -1,4 +1,6 @@
 # Require any additional compass plugins here.
+require 'susy'
+
 # Set this to the root of your project when deployed:
 http_path = "/wp-content/themes/html5_boilerplate"
 css_dir = "."
