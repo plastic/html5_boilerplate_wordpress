@@ -1,0 +1,27 @@
+// =======================
+// = HEADER & NAVIGATION =
+// =======================
+header[role="banner"] { 
+
+	background:#efefef;
+	padding: 1em;
+	
+	nav ul {
+		clear:both;
+		margin:10px 0 0;
+		padding:0;
+		list-style:none;
+		display:block;
+		overflow:hidden;
+	
+		li {
+			display:block;
+			float:left;
+			padding:0 0;
+			margin:0 0;
+			font-size:1.3em;
+			font-weight: bold;
+
+		}
+	}
+}
