@@ -4,12 +4,15 @@ Theme Name: Boilerplate HTML5 theme
 Theme URI: https://github.com/jayroh/html5_boilerplate_wordpress
 Description: This Boilerplate HTML5 is a kick-start for theme developers.
 Version: 0.1
-Author: Joel Oliveira
-Author URI: http://joeloliveira.com
-Tags: white, blank, 2 column, fixed
+Author: Joel Oliveira and Mike Susz
+Author URI: https://github.com/jayroh/html5_boilerplate_wordpress
+Tags: white, blank, 2 column, fixed, html5, compass, sass
 
 Credit where credit is due 
-- much thanks to Paul Irish, Divya Manian and everyone who's contributed to the html5boilerplate effort => http://html5boilerplate.com/
+- Much thanks to Paul Irish, Divya Manian and everyone who's contributed to the html5boilerplate effort => http://html5boilerplate.com/
+- The existance of SASS and SCSS. Mega-thanks to Hampton Catlin, Nathan Weizenbaum, and Chris Eppstein => http://sass-lang.com/
+- Chris Eppstein and all the developers behind Compass => http://compass-style.org
+- The team at Oddbird for the Susy grid framework - Carl Meyer, Eric Meyer and Jonny Gerig Meyer =>  http://susy.oddbird.net
 
 */
 
@@ -31,23 +34,28 @@ $quiet-color:       $font-color + #666 !default;
 $header-color:      $font-color - #222 !default;
 $background-color:  white !default;
 
-//**
-//  Susy: Un-obtrusive grids for designers
-//  By: Eric A. Meyer and OddBird
-//  Site: susy.oddbird.net
-//**
+// ** 12 COLUMN GRID **
+// Font Sizes
+// $base-font-size:   	16px;
+// $base-line-height: 	24px;
 
-// Font Sizes --------------------------------------------------------------
+// Grid
+// $total-cols: 	12;
+// $col-width: 		4em;
+// $gutter-width: 	1em;
+// $side-gutter-width: 	$gutter-width;
 
-$base-font-size:   16px;
-$base-line-height: 24px;
+// ** 16 COLUMN GRID **
+// Font Sizes
+$base-font-size:   	10px;
+$base-line-height: 	18px;
 
-// Grid --------------------------------------------------------------
+// Grid
+$total-cols: 		16;
+$col-width: 		4em;
+$gutter-width: 		2em;
+$side-gutter-width: 	$gutter-width / 2;
 
-$total-cols: 	12;
-$col-width: 	4em;
-$gutter-width: 	1em;
-$side-gutter-width: $gutter-width;
 
 // Don't move this @import above the GRID and FONT-SIZE variables.
 @import "susy/susy";
@@ -58,5 +66,9 @@ $side-gutter-width: $gutter-width;
 @import "partials/boilerplate";
 @import "partials/base";
 @import "partials/layout";
-@import "partials/legacy";
+@import "partials/header";
+@import "partials/footer";
+@import "partials/sidebar";
+@import "partials/posts";
+@import "partials/comments";
 @import "partials/at_media";

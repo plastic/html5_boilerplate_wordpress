@@ -5,23 +5,26 @@ Theme Name: Boilerplate HTML5 theme
 Theme URI: https://github.com/jayroh/html5_boilerplate_wordpress
 Description: This Boilerplate HTML5 is a kick-start for theme developers.
 Version: 0.1
-Author: Joel Oliveira
-Author URI: http://joeloliveira.com
-Tags: white, blank, 2 column, fixed
+Author: Joel Oliveira and Mike Susz
+Author URI: https://github.com/jayroh/html5_boilerplate_wordpress
+Tags: white, blank, 2 column, fixed, html5, compass, sass
 
 Credit where credit is due 
-- much thanks to Paul Irish, Divya Manian and everyone who's contributed to the html5boilerplate effort => http://html5boilerplate.com/
+- Much thanks to Paul Irish, Divya Manian and everyone who's contributed to the html5boilerplate effort => http://html5boilerplate.com/
+- The existance of SASS and SCSS. Mega-thanks to Hampton Catlin, Nathan Weizenbaum, and Chris Eppstein => http://sass-lang.com/
+- Chris Eppstein and all the developers behind Compass => http://compass-style.org
+- The team at Oddbird for the Susy grid framework - Carl Meyer, Eric Meyer and Jonny Gerig Meyer =>  http://susy.oddbird.net
 
 */
 /* line 29, ../../../../../../Developer/.rvm/gems/ree-1.8.7-2010.02/gems/compass-susy-plugin-0.8.1/sass/susy/_vertical_rhythm.scss */
 body {
-  font-size: 100%;
-  line-height: 1.5em;
+  font-size: 62.5%;
+  line-height: 1.8em;
 }
 
 /* line 33, ../../../../../../Developer/.rvm/gems/ree-1.8.7-2010.02/gems/compass-susy-plugin-0.8.1/sass/susy/_vertical_rhythm.scss */
 html > body {
-  font-size: 16px;
+  font-size: 10px;
 }
 
 /* line 11, sass/partials/_boilerplate.scss */
@@ -298,8 +301,8 @@ button {
 body {
   color: #444444;
   font-family: Verdana, Tahoma, Helvetica, Arial, sans-serif;
-  font-size: 16px;
-  line-height: 24px;
+  font-size: 10px;
+  line-height: 18px;
 }
 
 /* line 2, sass/partials/_base.scss */
@@ -359,7 +362,7 @@ pre, code, kbd, samp {
   *zoom: 1;
   margin-left: auto;
   margin-right: auto;
-  width: 61em;
+  width: 96em;
   max-width: 100%;
 }
 /* line 22, ../../../../../../Developer/.rvm/gems/ree-1.8.7-2010.02@global/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
@@ -377,34 +380,34 @@ pre, code, kbd, samp {
 #container > footer,
 body.one-column #posts {
   clear: both;
-  margin-right: 1.639%;
-  margin-left: 1.639%;
+  margin-right: 1.042%;
+  margin-left: 1.042%;
 }
 
 /* line 15, sass/partials/_layout.scss */
 body.three-column #posts {
   display: inline;
   float: left;
-  width: 47.541%;
-  margin-right: 1.639%;
+  width: 60.417%;
+  margin-right: 2.083%;
 }
 /* line 16, sass/partials/_layout.scss */
 body.three-column aside.left, body.three-column aside.right {
   display: inline;
   float: left;
-  width: 22.951%;
-  margin-right: 1.639%;
+  width: 16.667%;
+  margin-right: 2.083%;
 }
 /* line 17, sass/partials/_layout.scss */
 body.three-column aside.left {
-  margin-left: 1.639%;
+  margin-left: 1.042%;
 }
 /* line 18, sass/partials/_layout.scss */
 body.three-column aside.right {
   display: inline;
   float: right;
-  margin-right: 1.639%;
-  #margin-left: -1em;
+  margin-right: 1.042%;
+  #margin-left: -2em;
 }
 
 /* default this to 3 columns */
@@ -412,49 +415,46 @@ body.three-column aside.right {
 body.two-column #posts {
   display: inline;
   float: left;
-  width: 72.131%;
-  margin-right: 1.639%;
+  width: 66.667%;
+  margin-right: 2.083%;
 }
 /* line 24, sass/partials/_layout.scss */
 body.two-column aside.right, body.two-column aside.left {
   display: inline;
   float: left;
-  width: 22.951%;
-  margin-right: 1.639%;
+  width: 29.167%;
+  margin-right: 2.083%;
 }
 /* line 26, sass/partials/_layout.scss */
 body.two-column.left-column aside.left {
-  margin-left: 1.639%;
+  margin-left: 1.042%;
 }
 /* line 27, sass/partials/_layout.scss */
 body.two-column.left-column #posts {
   display: inline;
   float: right;
-  margin-right: 1.639%;
-  #margin-left: -1em;
+  margin-right: 1.042%;
+  #margin-left: -2em;
 }
 /* line 30, sass/partials/_layout.scss */
 body.two-column.right-column #posts {
-  margin-left: 1.639%;
+  margin-left: 1.042%;
 }
 /* line 31, sass/partials/_layout.scss */
 body.two-column.right-column aside.right {
   display: inline;
   float: right;
-  margin-right: 1.639%;
-  #margin-left: -1em;
+  margin-right: 1.042%;
+  #margin-left: -2em;
 }
 
 /* 2 columns */
-/* ======================= */
-/* = HEADER & NAVIGATION = */
-/* ======================= */
-/* line 4, sass/partials/_legacy.scss */
+/* line 4, sass/partials/_header.scss */
 header[role="banner"] {
   background: #efefef;
   padding: 1em;
 }
-/* line 9, sass/partials/_legacy.scss */
+/* line 9, sass/partials/_header.scss */
 header[role="banner"] nav ul {
   clear: both;
   margin: 10px 0 0;
@@ -463,7 +463,7 @@ header[role="banner"] nav ul {
   display: block;
   overflow: hidden;
 }
-/* line 17, sass/partials/_legacy.scss */
+/* line 17, sass/partials/_header.scss */
 header[role="banner"] nav ul li {
   display: block;
   float: left;
@@ -472,180 +472,147 @@ header[role="banner"] nav ul li {
   font-size: 1.3em;
   font-weight: bold;
 }
-/* line 28, sass/partials/_legacy.scss */
-header[role="banner"] nav ul li a:link,
-header[role="banner"] nav ul li a:visited,
-header[role="banner"] nav ul li a:hover,
-header[role="banner"] nav ul li a:active {
-  background: #fff;
-  color: #666;
-  display: inline-block;
-  margin-right: 5px;
-  padding: 2px 5px;
-  text-decoration: none;
-}
 
-/* ===================== */
-/* = MAIN CONTENT AREA = */
-/* ===================== */
-/* line 44, sass/partials/_legacy.scss */
-#posts {
+/* line 4, sass/partials/_footer.scss */
+#container footer {
+  clear: both;
   margin-top: 1em;
-  min-height: 500px;
 }
 
-/* line 45, sass/partials/_legacy.scss */
-#posts nav {
-  padding: 0px;
-  font-size: .9em;
-  overflow: hidden;
+/* line 5, sass/partials/_footer.scss */
+#container footer p {
+  padding: 5px 0;
 }
 
-/* line 46, sass/partials/_legacy.scss */
-#posts nav .previous {
-  float: left;
-}
-
-/* line 47, sass/partials/_legacy.scss */
-#posts nav .next {
-  float: right;
-}
-
-/* line 50, sass/partials/_legacy.scss */
-article.post h2 a {
-  color: #333;
-  text-decoration: none;
-}
-
-/* line 51, sass/partials/_legacy.scss */
-article.post h2 a:hover {
-  color: #ccc;
-}
-
-/* line 52, sass/partials/_legacy.scss */
-article.post p {
-  margin: 1.2em 1em 1.2em 0;
-}
-
-/* line 53, sass/partials/_legacy.scss */
-article.post a {
-  text-decoration: underline;
-}
-
-/* line 54, sass/partials/_legacy.scss */
-article.post img {
-  padding: 5px 8px;
-}
-
-/* line 55, sass/partials/_legacy.scss */
-article.post ul {
-  list-style: square;
-  padding: 2px 0;
-}
-
-/* line 56, sass/partials/_legacy.scss */
-article.post li {
-  padding: 2px 0;
-}
-
-/* line 57, sass/partials/_legacy.scss */
-article.post small {
-  font-size: .9em;
-}
-
-/* styling for 'continued' page links */
-/* line 60, sass/partials/_legacy.scss */
-p.continued {
-  padding: 5px;
-  background: #f0f0f0;
-}
-
-/* line 61, sass/partials/_legacy.scss */
-p.continued a {
-  padding: 5px;
-  font-weight: bold;
-}
-
-/* ============== */
-/* = SIDEBAR(s) = */
-/* ============== */
-/* line 67, sass/partials/_legacy.scss */
+/* line 4, sass/partials/_sidebar.scss */
 #container aside {
   background-color: #ccc;
   margin-top: 1em;
   min-height: 500px;
 }
-/* line 71, sass/partials/_legacy.scss */
+/* line 8, sass/partials/_sidebar.scss */
 #container aside h2 {
   margin-top: 20px;
 }
-/* line 73, sass/partials/_legacy.scss */
+/* line 9, sass/partials/_sidebar.scss */
 #container aside ul {
   margin: 0;
   padding: 0;
   list-style: none;
 }
-/* line 77, sass/partials/_legacy.scss */
+/* line 13, sass/partials/_sidebar.scss */
 #container aside ul li {
   padding: 2px;
 }
-/* line 78, sass/partials/_legacy.scss */
+/* line 14, sass/partials/_sidebar.scss */
 #container aside ul li a {
   display: block;
   border-bottom: solid 1px #ececec;
 }
 
-/* ============ */
-/* = COMMENTS = */
-/* ============ */
-/* line 88, sass/partials/_legacy.scss */
+/* line 5, sass/partials/_posts.scss */
+#posts {
+  margin-top: 1em;
+  min-height: 500px;
+}
+/* line 8, sass/partials/_posts.scss */
+#posts nav {
+  padding: 0px;
+  font-size: .9em;
+  overflow: hidden;
+}
+/* line 9, sass/partials/_posts.scss */
+#posts nav .previous {
+  float: left;
+}
+/* line 10, sass/partials/_posts.scss */
+#posts nav .next {
+  float: right;
+}
+
+/* line 14, sass/partials/_posts.scss */
+article.post h2 a {
+  color: #333;
+  text-decoration: none;
+}
+/* line 15, sass/partials/_posts.scss */
+article.post h2 a:hover {
+  color: #ccc;
+}
+/* line 16, sass/partials/_posts.scss */
+article.post p {
+  margin: 1.2em 1em 1.2em 0;
+}
+/* line 17, sass/partials/_posts.scss */
+article.post a {
+  text-decoration: underline;
+}
+/* line 18, sass/partials/_posts.scss */
+article.post img {
+  padding: 5px 8px;
+}
+/* line 19, sass/partials/_posts.scss */
+article.post ul {
+  list-style: square;
+  padding: 2px 0;
+}
+/* line 20, sass/partials/_posts.scss */
+article.post li {
+  padding: 2px 0;
+}
+/* line 21, sass/partials/_posts.scss */
+article.post small {
+  font-size: .9em;
+}
+
+/* styling for 'continued' page links */
+/* line 25, sass/partials/_posts.scss */
+p.continued {
+  padding: 5px;
+  background: #f0f0f0;
+}
+
+/* line 26, sass/partials/_posts.scss */
+p.continued a {
+  padding: 5px;
+  font-weight: bold;
+}
+
+/* line 4, sass/partials/_comments.scss */
 #comments {
   margin: 0px 10px 10px 0;
   padding: 0px 10px 10px 0;
 }
-
-/* line 89, sass/partials/_legacy.scss */
+/* line 8, sass/partials/_comments.scss */
 #comments h3 {
   margin: 0 0 10px;
 }
-
-/* line 90, sass/partials/_legacy.scss */
-ol.commentlist {
+/* line 10, sass/partials/_comments.scss */
+#comments ol.commentlist {
   margin: 0;
   padding: 0;
   overflow: hidden;
 }
-
-/* line 91, sass/partials/_legacy.scss */
-ol.commentlist li {
+/* line 14, sass/partials/_comments.scss */
+#comments ol.commentlist li {
   background: #ececec;
   margin: 0px 0 10px;
   padding: 10px;
 }
 
-/* line 94, sass/partials/_legacy.scss */
-cite {
-  font-style: normal;
-  font-weight: bold;
-}
-
-/* ================ */
-/* = COMMENT FORM = */
-/* ================ */
-/* line 100, sass/partials/_legacy.scss */
-#commentform {
-  margin: 0px 10px 10px 0;
-  padding: 0px 10px 10px 0;
-}
-
-/* line 101, sass/partials/_legacy.scss */
+/* line 23, sass/partials/_comments.scss */
 #commentbox {
   width: 100%;
   min-width: 400px;
   margin: 5px 5px 0 0;
 }
 
-/* line 106, sass/partials/_legacy.scss */
+/* line 28, sass/partials/_comments.scss */
+#commentform {
+  margin: 0px 10px 10px 0;
+  padding: 0px 10px 10px 0;
+}
+/* line 36, sass/partials/_comments.scss */
 #commentform #author,
 #commentform #email,
 #commentform #url,
@@ -653,25 +620,6 @@ cite {
 #commentform #submit {
   border: solid 1px #ccc;
   margin: 5px 5px 0 0;
-}
-
-/* line 107, sass/partials/_legacy.scss */
-#submit {
-  cursor: pointer;
-}
-
-/* ========== */
-/* = FOOTER = */
-/* ========== */
-/* line 112, sass/partials/_legacy.scss */
-#container footer {
-  clear: both;
-  margin-top: 1em;
-}
-
-/* line 113, sass/partials/_legacy.scss */
-#container footer p {
-  padding: 5px 0;
 }
 
 @media all and (orientation:portrait) {}

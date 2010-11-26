@@ -12,7 +12,7 @@ body.one-column #posts {
 
 // **********************************************************
 body.three-column {
-	#posts { @include columns(6); }
+	#posts { @include columns(10); }
 	aside.left, aside.right { @include columns(3); }
 	aside.left { @include alpha; }
 	aside.right { @include omega; }
@@ -20,8 +20,8 @@ body.three-column {
 
 // **********************************************************
 body.two-column {
-	#posts { @include columns(9); }
-	aside.right, aside.left { @include columns(3); }
+	#posts { @include columns(11); }
+	aside.right, aside.left { @include columns(5); }
 	&.left-column {
 		aside.left { @include alpha; }
 		#posts { @include omega; }
@@ -31,5 +31,3 @@ body.two-column {
 		aside.right { @include omega; }
 	}
 }	/* 2 columns */
-
-
