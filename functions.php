@@ -96,12 +96,16 @@ if (function_exists( 'add_theme_support' ))
   	);
 }
 
-// Load jQuery
+// Load jQuery & Modernizr
 if (!is_admin())
 {
    wp_deregister_script('jquery');
    wp_register_script('jquery', ("http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js"), false);
    wp_enqueue_script('jquery');
+
+   wp_deregister_script('modernizr');
+   wp_register_script('modernizr', (get_bloginfo('template_directory')."/js/modernizr.js"), false, "1.6");
+   wp_enqueue_script('modernizr');
 }
 
 // Clean up the <head>
