@@ -26,7 +26,6 @@
 	<link rel="alternate"  href="<?php bloginfo('atom_url'); ?>"    type="application/atom+xml" title="Atom 0.3" />
 	<link rel="pingback"   href="<?php bloginfo('pingback_url'); ?>" />
 	<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" />
-	<script src="<?php bloginfo('template_directory'); ?>js/libs/modernizr-1.6.min.js"></script>
 </head>
 <body <?php if(is_front_page()): ?>id="home"<?php endif; ?> <?php body_class(); ?>>
 	<div id="container">
@@ -41,7 +40,10 @@
 			</nav>
 
 			<nav id="utility">
-				<?php wp_nav_menu( array('menu' => 'Utility Navigation' )); ?>
+				<?php 
+					// If you have navigation created called "Utility Navigation", uncomment this for it to show up
+					// wp_nav_menu( array('menu' => 'Utility Navigation' )); 
+				?>
 				<?php if(show_search_form()){ include (TEMPLATEPATH . "/searchform.php"); } ?>
 			</nav>
 		</header>

@@ -1,5 +1,4 @@
 <?php get_header(); ?>
-<div id="contentwrap">
 
 	<?php if(show_sidebar_at('left')) { get_sidebar('left'); } ?>
 	<section id="posts">
@@ -40,5 +39,4 @@
 	</section>
 	<?php if(show_sidebar_at('right')) { get_sidebar ('right'); } ?>
 
-</div>
 <?php get_footer(); ?>
