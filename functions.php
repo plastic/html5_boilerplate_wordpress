@@ -100,15 +100,7 @@ if (function_exists( 'add_theme_support' ))
 // Load jQuery & Modernizr
 if (!is_admin())
 {
-<<<<<<< HEAD
-   wp_deregister_script('jquery');
-   wp_register_script('jquery', ("http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js"), false);
-   wp_enqueue_script('jquery');
 
-   wp_deregister_script('modernizr');
-   wp_register_script('modernizr', (get_bloginfo('template_directory')."/js/modernizr.js"), false, "1.6");
-   wp_enqueue_script('modernizr');
-=======
 	wp_deregister_script('jquery');
 	wp_register_script('jquery', ("http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"), false);
 	wp_enqueue_script('jquery');
@@ -116,8 +108,6 @@ if (!is_admin())
 	wp_deregister_script( 'modernizr' ); // get rid of any native Modernizr
 	wp_register_script( 'modernizr', get_bloginfo('template_directory') . '/js/libs/modernizr-1.6.min.js', array(), '1.6' );
 	wp_enqueue_script( 'modernizr' );
-   
->>>>>>> 3e1d1a02833f63bcd693d1d89f32230f901f4da4
 }
 
 // Clean up the <head>
