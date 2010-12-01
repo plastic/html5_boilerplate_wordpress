@@ -66,7 +66,7 @@ if (function_exists('register_sidebar'))
 // ===================================
 // = ADD NEW CLASSES TO body_class() =
 // ===================================
-function sidebar_number_class() 
+function sidebar_number_class($classes) 
 {
 	$columns = 1;
 	if(show_sidebar_at('left')) { $columns++; $classes[] = "left-column"; }
