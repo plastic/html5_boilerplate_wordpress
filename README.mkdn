@@ -38,7 +38,7 @@ To see more options just run `compass help`
 Anatomy of this theme
 =====================
 
-* As mentioned above, the html5 boilerplate project (https://github.com/paulirish/html5-boilerplate) serves as the basis for the markup and stylesheet as much as possible.  The one exception that stands out is that javascript is still included within <head/> by default instead of just before </body>.
+* As mentioned above, the html5 boilerplate project (https://github.com/paulirish/html5-boilerplate) serves as the basis for the markup and stylesheet as much as possible.  The one exception that stands out is that javascript is still included within `<head/>` by default instead of just before `</body>`.
 * The latest versions of Modernizr, DD_belatedPNG and jQuery.
 * CSS has been split up into partials using the SCSS formatting method instead of traditional SASS.   All partials can be found in html5_boilerplate/sass/partials.
 * In addition to base font variables, style.scss contains grid-related variables that will drive how we layout the theme.  Currently the default is a 16 column grid (for a 960px wide grid), but you will also find a 12 column grid commented out above.
