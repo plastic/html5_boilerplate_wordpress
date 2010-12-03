@@ -66,5 +66,4 @@ This is by no means done and we would LOVE feedback - pull requests, patches, ad
 
 Thank you.
 
-Joel Oliveira - [@jayroh](http://twitter.com/jayroh)
-Mike Susz - [@mikesusz](http://twitter.com/mikesusz)
+Joel Oliveira [@jayroh](http://twitter.com/jayroh) and Mike Susz  [@mikesusz](http://twitter.com/mikesusz)
