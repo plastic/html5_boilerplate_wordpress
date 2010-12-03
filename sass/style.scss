@@ -61,7 +61,7 @@ $side-gutter-width: 	$gutter-width / 2;
 @import "susy/susy";
 @include susy;
 
-// @import "compass";
+// @import "compass"; // not necessary after importing susy
 @import "modules/base";
 @import "partials/boilerplate";
 @import "partials/base";

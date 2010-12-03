@@ -47,4 +47,3 @@
 				<?php if(show_search_form()){ include (TEMPLATEPATH . "/searchform.php"); } ?>
 			</nav>
 		</header>
-		
