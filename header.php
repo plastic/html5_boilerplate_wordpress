@@ -37,6 +37,7 @@
 
 			<nav id="primary">
 				<?php wp_nav_menu( array('menu' => 'Primary Navigation' )); ?>
+				<?php if(show_search_form()){ include (TEMPLATEPATH . "/searchform.php"); } ?>
 			</nav>
 
 			<nav id="utility">
@@ -44,6 +45,5 @@
 					// If you have navigation created called "Utility Navigation", uncomment this for it to show up
 					// wp_nav_menu( array('menu' => 'Utility Navigation' )); 
 				?>
-				<?php if(show_search_form()){ include (TEMPLATEPATH . "/searchform.php"); } ?>
 			</nav>
 		</header>
