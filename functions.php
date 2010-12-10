@@ -6,6 +6,7 @@
 function show_sidebar_at($position) { return get_option('sidebar_'.$position) == "1" ? true : false; }
 function show_search_form() { return get_option('show_search') == "1" ? true : false; }
 function show_footer_title() { return get_option('show_footer_title') == "1" ? true : false; }
+function show_footer_meta() { return get_option('show_footer_meta') == "1" ? true : false; }
 
 // =========================
 // = CUSTOM THEME SETTINGS =
@@ -46,7 +47,7 @@ function editglobalcustomfields()
 		<h2>Theme Options</h2>
   		<form method="post" action="options.php" id="theme_options">
 	  	  	<input type="hidden" name="action" value="update" />
-			<input type="hidden" name="page_options" value="company_name,site_credit,sidebar_left,sidebar_right,sidebar_footer,show_search,show_footer_title,custom_menus" />
+			<input type="hidden" name="page_options" value="company_name,site_credit,sidebar_left,sidebar_right,sidebar_footer,show_search,show_footer_title,show_footer_meta,custom_menus" />
 			<?php wp_nonce_field('update-options') ?>
 
 
@@ -98,9 +99,22 @@ function editglobalcustomfields()
 				<legend>Footer</legend>
 				
 				<p>
-					<label for="">Show website title in footer?</label>
+					<label for="show_footer_title">Show website title?</label>
 					<select name="show_footer_title" id="show_footer_title">
 						<?php if (show_footer_title()) : ?>
+							<option value="1" selected="selected">Yes</option>
+							<option value="0">No</option>
+						<?php else : ?>
+							<option value="1">Yes</option>
+							<option value="0" selected="selected">No</option>
+						<?php endif; ?>
+					</select>
+				</p>
+				
+				<p>
+					<label for="show_footer_meta">Show Meta Links?</label>
+					<select name="show_footer_meta" id="show_footer_meta">
+						<?php if (show_footer_meta()) : ?>
 							<option value="1" selected="selected">Yes</option>
 							<option value="0">No</option>
 						<?php else : ?>
