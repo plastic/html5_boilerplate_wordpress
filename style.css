@@ -128,25 +128,29 @@ pre, code, kbd, samp { font-family: Monaco, "Andale Mono", "Lucida Console", mon
 
 ::selection { background: #aaaaaa; color: #111111; text-shadow: none; }
 
-#container { *zoom: 1; margin-left: auto; margin-right: auto; width: 96em; max-width: 100%; }
-#container:after { content: "\0020"; display: block; height: 0; clear: both; overflow: hidden; visibility: hidden; }
+body #container { width: 960px; margin: 0 auto; }
 
-#container > header, #container > footer, body.one-column #posts { clear: both; margin-right: 1.042%; margin-left: 1.042%; }
+body.three-column aside.left, body.three-column aside.right, body.three-column #posts { margin-right: 10px; width: 200px; float: left; }
+body.three-column aside.right { margin-right: 0; }
+body.three-column #posts { margin-right: 10px; width: 540px; }
 
-body.three-column #posts { display: inline; float: left; width: 60.417%; margin-right: 2.083%; }
-body.three-column aside.left, body.three-column aside.right { display: inline; float: left; width: 16.667%; margin-right: 2.083%; }
-body.three-column aside.left { margin-left: 1.042%; }
-body.three-column aside.right { display: inline; float: right; margin-right: 1.042%; #margin-left: -2em; }
+body.grid #container { *zoom: 1; margin-left: auto; margin-right: auto; width: 96em; max-width: 100%; }
+body.grid #container:after { content: "\0020"; display: block; height: 0; clear: both; overflow: hidden; visibility: hidden; }
 
-/* default this to 3 columns */
-body.two-column #posts { display: inline; float: left; width: 66.667%; margin-right: 2.083%; }
-body.two-column aside.right, body.two-column aside.left { display: inline; float: left; width: 29.167%; margin-right: 2.083%; }
-body.two-column.left-column aside.left { margin-left: 1.042%; }
-body.two-column.left-column #posts { display: inline; float: right; margin-right: 1.042%; #margin-left: -2em; }
-body.two-column.right-column #posts { margin-left: 1.042%; }
-body.two-column.right-column aside.right { display: inline; float: right; margin-right: 1.042%; #margin-left: -2em; }
+body.grid #container > header, body.grid #container > footer, body.grid.one-column #posts { clear: both; margin-right: 1.042%; margin-left: 1.042%; }
 
-/* 2 columns */
+body.grid.three-column #posts { display: inline; float: left; width: 60.417%; margin-right: 2.083%; }
+body.grid.three-column aside.left, body.grid.three-column aside.right { display: inline; float: left; width: 16.667%; margin-right: 2.083%; }
+body.grid.three-column aside.left { margin-left: 1.042%; }
+body.grid.three-column aside.right { display: inline; float: right; margin-right: 1.042%; #margin-left: -2em; }
+
+body.grid.two-column #posts { display: inline; float: left; width: 66.667%; margin-right: 2.083%; }
+body.grid.two-column aside.right, body.grid.two-column aside.left { display: inline; float: left; width: 29.167%; margin-right: 2.083%; }
+body.grid.two-column.left-column aside.left { margin-left: 1.042%; }
+body.grid.two-column.left-column #posts { display: inline; float: right; margin-right: 1.042%; #margin-left: -2em; }
+body.grid.two-column.right-column #posts { margin-left: 1.042%; }
+body.grid.two-column.right-column aside.right { display: inline; float: right; margin-right: 1.042%; #margin-left: -2em; }
+
 header[role="banner"] { background: #efefef; padding: 1em; }
 header[role="banner"] nav ul { clear: both; margin: 10px 0 0; padding: 0; list-style: none; display: block; overflow: hidden; }
 header[role="banner"] nav ul li { display: block; float: left; padding: 0 0; margin: 0 0; font-size: 1.3em; font-weight: bold; }
@@ -190,10 +194,7 @@ p.continued a { padding: 5px; font-weight: bold; }
 #commentform { margin: 0px 10px 10px 0; padding: 0px 10px 10px 0; }
 #commentform #author, #commentform #email, #commentform #url, #commentform textarea, #commentform #submit { border: solid 1px #ccc; margin: 5px 5px 0 0; }
 
-@media all and (orientation:portrait) {}
-@media all and (orientation:landscape) {}
 @media screen and (max-device-width: 480px) { /* html { -webkit-text-size-adjust:none; -ms-text-size-adjust:none; } */ }
-
 @media print { * { background: transparent !important; color: #444 !important; text-shadow: none !important; }
   a, a:visited { color: #444 !important; text-decoration: underline; }
   a:after { content: " (" attr(href) ")"; }

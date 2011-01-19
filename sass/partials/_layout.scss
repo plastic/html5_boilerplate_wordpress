@@ -1,25 +1,62 @@
-#container { 
+//   If you're going to use this as a parent theme, copy the 
+// appropriate code below (grid -or- no-grid blocks) into
+// your own theme and override as you would like.
+
+//   If not, then just hack away below and change it as you
+// see fit.  Go nuts.
+
+// **********************************************************
+// ** DEFAULT / WITHOUT GRID ********************************
+// **********************************************************
+
+body #container { 
+	width: 960px;
+  margin: 0 auto;
+}
+  body.three-column {
+    aside.left, 
+    aside.right,
+    #posts {
+      margin-right: 10px;
+      width: 200px;
+      float: left;
+    }
+    aside.right {
+      margin-right: 0;
+    }
+    #posts {
+      margin-right: 10px;
+      width:540px;
+    }
+  }
+
+
+// **********************************************************
+// ** WITH GRID *********************************************
+// **********************************************************
+
+// grid defaults - 1 column
+body.grid #container { 
 	@include container;
 	// @include show-grid('grid.png');
 }
 
-// **********************************************************
-#container > header, 
-#container > footer, 
-body.one-column #posts {
+body.grid #container > header, 
+body.grid #container > footer, 
+body.grid.one-column #posts {
 	@include full;
 }
 
-// **********************************************************
-body.three-column {
+// 3 columns
+body.grid.three-column {
 	#posts { @include columns(10); }
 	aside.left, aside.right { @include columns(3); }
 	aside.left { @include alpha; }
 	aside.right { @include omega; }
-}	/* default this to 3 columns */
+}
 
-// **********************************************************
-body.two-column {
+// 2 columns
+body.grid.two-column {
 	#posts { @include columns(11); }
 	aside.right, aside.left { @include columns(5); }
 	&.left-column {
@@ -30,4 +67,4 @@ body.two-column {
 		#posts { @include alpha; }
 		aside.right { @include omega; }
 	}
-}	/* 2 columns */
+}

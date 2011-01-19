@@ -7,6 +7,7 @@ function show_sidebar_at($position) { return get_option('sidebar_'.$position) ==
 function show_search_form() { return get_option('show_search') == "1" ? true : false; }
 function show_footer_title() { return get_option('show_footer_title') == "1" ? true : false; }
 function show_footer_meta() { return get_option('show_footer_meta') == "1" ? true : false; }
+function use_grid() { return get_option('use_grid') == "1" ? true : false; }
 
 // =========================
 // = CUSTOM THEME SETTINGS =
@@ -20,6 +21,7 @@ function editglobalcustomfields()
 	$sidebar_left_status = show_sidebar_at('left') ? "checked=\"yes\"" : "";
 	$sidebar_right_status = show_sidebar_at('right') == "1" ? "checked=\"yes\"" : "";
 	$sidebar_footer_status = show_sidebar_at('footer') == "1" ? "checked=\"yes\"" : "";
+	$use_grid = use_grid() == "1" ? "checked=\"yes\"" : "";
 	?>
 	<style type="text/css" media="screen">
 	
@@ -36,7 +38,9 @@ function editglobalcustomfields()
 			display: block;
 			margin-bottom: 10px;
 		}
+		#options_general_site_information .dev		input,
 		#options_general_site_information .sidebars input { float: left; margin-right:5px; }
+		#options_general_site_information .dev      label,
 		#options_general_site_information .sidebars label {
 			clear: right;
 			display: block;
@@ -47,7 +51,7 @@ function editglobalcustomfields()
 		<h2>Theme Options</h2>
   		<form method="post" action="options.php" id="theme_options">
 	  	  	<input type="hidden" name="action" value="update" />
-			<input type="hidden" name="page_options" value="company_name,site_credit,sidebar_left,sidebar_right,sidebar_footer,show_search,show_footer_title,show_footer_meta,custom_menus" />
+			<input type="hidden" name="page_options" value="company_name,site_credit,use_grid,sidebar_left,sidebar_right,sidebar_footer,show_search,show_footer_title,show_footer_meta,custom_menus" />
 			<?php wp_nonce_field('update-options') ?>
 
 
@@ -64,6 +68,11 @@ function editglobalcustomfields()
 					<input type="text" name="site_credit" value="<?php echo htmlspecialchars(get_option('site_credit')); ?>" id="site_credit" size="40" />
 				</p>
 
+				<p class="dev">
+					<strong>Would you like to use the 960px grid in your theme?</strong>
+					
+					<input type="checkbox" name="use_grid" value="1" id="use_grid" <?php echo $use_grid; ?> /> <label for="use_grid">Yes</label>
+				</p>
 
 				<p class="sidebars">
 					<strong>Which sidebars would you like to see?</strong>
@@ -165,6 +174,8 @@ function sidebar_number_class($classes)
 	if($columns == 1){ $classes[] = "one-column"; }
 	if($columns == 2){ $classes[] = "two-column"; }
 	if($columns == 3){ $classes[] = "three-column"; }
+	
+	if(use_grid()){ $classes[] = "grid"; }
 	 
 	// return the $classes array
 	return $classes;
